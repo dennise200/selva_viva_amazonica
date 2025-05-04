@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Selva Viva </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+  
+  
+  * {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: default;
+}
+  
+  p {
+  margin-bottom: 20px; /* Espacio de 20px entre párrafos */
+}
+
+  
+  
+  body {
+    font-family: 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
+}
+
+
+
+
+
+  /* Definir el tipo de letra */
+h1 {
+  font-family: 'Showcard Gothic', sans-serif; /* O el tipo de letra que desees */
+  font-size: 30px;
+  background: linear-gradient(to right, white 50%, white 50%);
+  -webkit-background-clip: text; /* Para que el fondo se aplique solo al texto */
+  color: transparent; /* Hacemos el color del texto transparente */
+}
+
+  
+ /* Estilo base global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; /* Máximo ancho para pantallas grandes */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Asegurarnos de que el logo no se superponga al título */
+.header {
+  display: flex;
+  justify-content: space-between; /* Coloca el logo y el título en extremos opuestos */
+  align-items: center; /* Alinea el logo y el título verticalmente */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas más pequeñas */
+  margin-bottom: 20px;
+}
+
+.header img {
+  max-width: 100%; /* Asegura que el logo no se desborde */
+  height: auto;
+  max-height: 80px; /* Limita la altura máxima del logo */
+}
+
+/* Título */
+.title {
+  font-size: 2.5em;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* Media Queries */
+
+/* Pantallas grandes (computadoras de escritorio grandes, televisores) */
+@media screen and (min-width: 1600px) {
+  .container {
+    width: 85%;
+  }
+  .header img {
+    max-height: 100px; /* Un poco más grande el logo en pantallas grandes */
+  }
+  .title {
+    font-size: 3em;
+  }
+}
+
+/* Pantallas medianas (computadoras de escritorio estándar, laptops) */
+@media screen and (max-width: 1599px) and (min-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+  .header img {
+    max-height: 80px;
+  }
+  .title {
+    font-size: 2.5em;
+  }
+}
+
+/* Pantallas pequeñas (tabletas en posición horizontal) */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .container {
+    width: 95%;
+  }
+  .header img {
+    max-height: 70px; /* Ajuste en tabletas */
+  }
+  .title {
+    font-size: 2em;
+  }
+}
+
+/* Pantallas más pequeñas (tabletas en posición vertical, móviles) */
+@media screen and (max-width: 767px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+  .header {
+    flex-direction: column; /* Los elementos se apilan verticalmente en pantallas pequeñas */
+    align-items: center;
+  }
+  .header img {
+    max-height: 60px; /* Ajuste en móviles */
+  }
+  .title {
+    font-size: 1.8em;
+    text-align: center;
+  }
+}
+
+/* Pantallas extremadamente pequeñas (teléfonos móviles más pequeños) */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 5px;
+  }
+  .header img {
+    max-height: 50px; /* Ajuste aún mayor en teléfonos muy pequeños */
+  }
+  .title {
+    font-size: 1.6em;
+  }
+}
+
+
+  /* Estilo para el título */
+.header-title-slogan h1 {
+  margin: 0;
+  color: #B9C117; /* Cambia este color por el que desees para el título */
+}
+
+/* Estilo para el eslogan */
+.header-title-slogan p {
+  margin-top: 10px;
+  color: #B9C117; /* Cambia este color por el que desees para el eslogan */
+}
+
+
+/* Ajustamos el header para que los elementos se apilen verticalmente */
+header {
+  display: flex;
+  flex-direction: column; /* Esto hace que los elementos dentro del header se apilen verticalmente */
+  justify-content: center;
+  align-items: center; /* Mantiene el título y el eslogan centrados */
+  background-color: #ffcc00;
+  padding: 40px 20px;
+  margin-bottom: 20px;
+}
+
+/* Solo movemos el logo a la izquierda sin afectar el resto */
+.logo {
+  position: absolute; /* Esto saca el logo del flujo normal del layout */
+  left: 20px; /* Ajusta el logo al borde izquierdo */
+  top: 40px; /* Ajusta la posición vertical si es necesario */
+}
+
+.logo img {
+  height: 40px;
+}
+
+/* Título y eslogan siguen centrados */
+.header-title-slogan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centra el título y el eslogan */
+  margin-bottom: 20px; /* Espacio entre el título/eslogan y el menú */
+}
+
+.header-title-slogan h1 {
+  margin: 0;
+}
+
+.header-title-slogan p {
+  margin-top: 10px;
+}
+
+/* El menú se alinea de manera horizontal debajo del título y eslogan */
+nav {
+  background-color: #fff; /* Fondo blanco para el cajón */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  width: 10; /* Ajusta el ancho del cajón al contenido del menú */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para darle elegancia */
+  margin-top: 10px; /* Espacio entre el menú y el título/eslogan */
+}
+
+/* Estilo de los elementos de la lista dentro del menú */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+/* Espaciado entre los items del menú */
+nav ul li {
+  margin: 0 20px;
+}
+
+/* Estilo de los enlaces dentro del menú */
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.2s ease; /* Efecto suave en el cambio de color */
+}
+
+/* Efecto al pasar el mouse sobre los enlaces */
+nav ul li a:hover {
+  color:#00FFFF; /* Cambia el color al pasar el mouse */
+  transform: scale(1.1); /* Efecto de aumento del tamaño al pasar el mouse */
+}
+
+
+  /* Añadir un espacio debajo del slider */
+.slider-container {
+  margin-bottom: 5px; /* Ajusta este valor según el espacio que desees */
+}
+
+/* Estilo para el pie de página */
+footer {
+  margin-top: 5px;  /* Añadir espacio entre el slider y el pie de página */
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+  
+  /* Ocultar todas las secciones por defecto */
+.info-section {
+  display: none;
+}
+
+/* Mostrar la sección cuando se selecciona mediante :target */
+.info-section:target {
+  display: block;
+}
+
+/* Estilos básicos para la navegación */
+nav {
+  background-color: #333;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+  /* Estilo del encabezado */
+header {
+  width: 100%;
+  background-color: #ffcc00;
+  padding: 40px 20px;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+
+}
+
+/* Contenido de la página */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  padding: 20px;
+  margin-top: 100px; /* Ajusta el valor según el tamaño de tu encabezado */
+}
+
+
+
+    .background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;  /* Asegura que la imagen cubra todo el fondo */
+        z-index: -1;  /* La imagen está detrás del contenido */
+    }
+
+    .start-menu h1, .start-menu p {
+        position: relative;
+        z-index: 1;  /* Asegura que el texto esté encima de la imagen */
+    }
+
+    /* Estilo de la flecha */
+    .arrow {
+        position: relative;
+        font-size: 50px;  /* Tamaño grande para la flecha */
+        color: white;  /* Color blanco para la flecha */
+        cursor: pointer;  /* Cambia el cursor a mano al pasar sobre la flecha */
+        z-index: 1;  /* Asegura que la flecha esté sobre la imagen */
+        margin-top: 20px;  /* Da un poco de espacio encima de la flecha */
+        transition: transform 0.3s;  /* Agrega una animación de transición */
+    }
+
+    /* Efecto de hover para la flecha */
+    .arrow:hover {
+        transform: scale(1.2);  /* Hace que la flecha se agrande cuando se pasa el mouse */
+    }
+
+  
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      color: #ff6600;
+    }
+
+
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    /* Header with Logo */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffcc00;
+      padding: 40px 20px;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      height: 10px;
+    }
+
+    .header-title-slogan {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      margin-left: 20px;
+    }
+
+    .header-title-slogan h1 {
+      margin: 0;
+    }
+
+    .header-title-slogan p {
+      margin-top: 10px;
+    }
+
+    /* Separación de los menús */
+    nav {
+      margin-top: 20px;
+      background-color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      color: #ff6600;
+    }
+
+
+  
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.footer-content h3 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.footer-content p {
+    margin: 10px 0 20px;
+    font-size: 14px;
+}
+
+.footer-content .socials {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-content .socials li {
+    margin: 0 10px;
+}
+
+.footer-content .socials li a {
+    color:#B9C117;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-content .socials li a:hover {
+    color: green;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color:black;
+      padding: 40px 20px;
+    }
+
+    .logo img {
+      height: 150px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      color: green;
+    }
+
+    /* New styles for the start menu */
+    .start-menu {
+      position: fixed;
+      top: 10;
+      left: 10;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 1, 1, 5.8);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      z-index: 3000;
+      opacity: 2;
+      transition: opacity 0.5s ease;
+    }
+
+    .start-menu h1 {
+      font-size: 3em;
+      margin-bottom: 300px;
+    }
+
+    .start-menu .arrow {
+      font-size: 20px;
+      cursor: pointer;
+      background-color:#3300FF;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    .start-menu .arrow:hover {
+      background-color:#0033FF;
+    }
+
+    /* Hide the start menu after clicking */
+    .start-menu.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Slider Styles */
+    .slider-container {
+      position: relative;
+      max-width: 100%;
+      height: 400px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease;
+      width: 100%;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 400px;
+      position: relative;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 24px;
+      color:#99FFFF;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    /* Other existing styles ... */
+    /* Footer and content sections remain the same */
+
+  </style>
+</head>
+<body>
+  <!-- Start Menu -->
+  <div class="start-menu" id="start-menu">
+    <!-- Imagen como fondo utilizando <img> -->
+    <img src="Nueva carpeta/FONFOINICIO.PNG" alt="Fondo" class="background-image" />
+    
+    <!-- Contenido dentro del div -->
+    <h1><font style="font-family:Elephant">Bienvenido a las Iniciativas de Conservación de la Amazonia Ecuatoriana 🏞</font></h1>
+    <p>Haz clic en la flecha para comenzar</p>
+    
+    <!-- Flecha interactiva -->
+    <div class="arrow" onClick="startMenuClick()">&#8595;</div>
+</div>
+
+  <!-- Header with Logo and Menu -->
+  <header>
+    <center>
+      <div class="logo">
+        <div align="right"><img src="Nueva carpeta/logo.png" alt="" /></div>
+      </div>
+    </center>
+    <div class="header-title-slogan">
+      <center>
+        <h2><font style="font-family:Elephant" size="+3" color="#CC9966" >Iniciativas de Conservación de la Amazonia Ecuatoriana</font></h2>
+        <p class="slogan"><h2><font style="font-family:Bernard MT Condensed" size="+2" color="#CC9999" >Unidos por el Medio Ambiente</font></h2>🌱</p>
+      </center>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" onMouseOver="showPage('inicio')"><img src="Nueva carpeta/inicio.png">🏔️</a></li>
+        <li><a href="#" onMouseOver="showPage('menu')"><img src="Nueva carpeta/Cool Text - Lenguas 480953572782623.png">🗣️</a></li>
+        <li><a href="#" onMouseOver="showPage('ofertas')"><img src="Nueva carpeta/Cool Text - Conservacion 480953586265067.png">🐒</a></li>
+        <li><a href="#" onMouseOver="showPage('ubicaciones')"><img src="Nueva carpeta/Cool Text - Deforestacion 480953615072001.png">🔥</a></li>
+        <li><a href="#" onMouseOver="showPage('contacto')"><img src="Nueva carpeta/Cool Text - Noticias 480953631966533.png">⚠️</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<!-- Information Sections -->
+<div class="info-section" id="inicio">
+  <center><h2><font style="font-family:Bernard MT Condensed" >Reserva de la Biosfera del Yasuni</font></h2>
+  <center><h2> </h2>
+  <p></p>
+    <p>Contexto y más detalles: El Parque Nacional Yasuní es una de las áreas más biodiversas del planeta. Con una extensión de 9.820 km², se encuentra en el corazón de la Amazonía ecuatoriana y alberga una asombrosa cantidad de especies endémicas de flora y fauna. Este parque es el hogar de pueblos indígenas no contactados, como los Tagaeri y Taromenane, lo que lo convierte en un lugar extremadamente delicado desde el punto de vista cultural y ecológico.</p></center>
+  
+  <p>Yasuní ITT: En 2007, el presidente Rafael Correa lanzó la iniciativa Yasuní ITT, que proponía dejar bajo tierra el petróleo en el bloque ITT (Ishpingo, Tambococha y Tiputini) en el Parque Nacional Yasuní a cambio de una compensación internacional para la conservación de la zona. Se esperaba recaudar al menos 3.6 mil millones de dólares, un monto que no fue alcanzado debido a la falta de compromiso de la comunidad internacional. Esta propuesta fue vista como un modelo innovador de conservación, pero fue abandonada en 2013 debido a la falta de fondos, lo que permitió que la explotación petrolera comenzara en áreas adyacentes.</p></center>
+  
+  <p>Impacto de la explotación petrolera: La extracción de petróleo en la zona ha generado preocupaciones sobre el impacto ambiental, como la contaminación de ríos, la destrucción de hábitats naturales y el riesgo de enfermedades para las comunidades indígenas. A pesar de la controversia, la explotación continúa, lo que ha puesto en alerta a las organizaciones ambientalistas y a los pueblos indígenas.</p></center>
+
+  <!-- Image Box -->
+  <center>
+    <div class="image-box" id="image-box1">
+      <img src="Nueva carpeta/cajon1.png" alt="Imagen 1" class="info-image" onClick="showInfo('info1')">
+      <div id="info1" class="info-content" style="display: none;">
+        <p>Las marchas en defensa de los animales de la Amazonía han sido una manifestación significativa de la preocupación por la protección de la biodiversidad y los derechos de los animales en esta región. Estas movilizaciones han reunido a personas de diversas edades y orígenes, incluyendo activistas, líderes indígenas y ciudadanos comprometidos con la causa.</p>
+      </div>
+    </div>
+  
+    <div class="image-box" id="image-box2">
+      <img src="Nueva carpeta/cajon2.png" alt="Imagen 2" class="info-image" onClick="showInfo('info2')">
+      <div id="info2" class="info-content" style="display: none;">
+        <p>Las onstrucciones en medio de la selva amazónica reflejan una diversidad de enfoques arquitectónicos que van desde técnicas ancestrales indígenas hasta innovaciones modernas orientadas al ecoturismo y la sostenibilidad. Estas construcciones ilustran cómo la arquitectura en la selva amazónica ha evolucionado, adaptándose tanto a las condiciones ambientales como a las necesidades culturales y turísticas. Si tienes una imagen específica en mente, por favor compártela para ofrecerte información más detallada.​</p>
+      </div>
+    </div>
+
+    <div class="image-box" id="image-box3">
+      <img src="Nueva carpeta/cajon3.png" alt="Imagen 3" class="info-image" onClick="showInfo('info3')">
+      <div id="info3" class="info-content" style="display: none;">
+        <p>El retiro de agua en lagunas de la Amazonía muestran una grave crisis ambiental causada por sequías extremas, el cambio climático y fenómenos como El Niño. En lugares como Cuyabeno (Ecuador) y el Lago Tefé (Brasil), las lagunas y ríos han disminuido drásticamente, dejando fauna muerta, paisajes secos y comunidades afectadas. Las altas temperaturas, la deforestación, la minería y la agricultura intensiva agravan la situación, poniendo en riesgo ecosistemas únicos y medios de vida tradicionales.</p>
+      </div>
+    </div>
+  </center>
+
+  <!-- Slider for Inicio -->
+  <div class="slider-container" id="slider-inicio">
+    <div class="slider">
+      <div class="slide">
+        <img src="Nueva carpeta/slider1.png" alt="Promo 1">
+        <div class="caption">¡La Amazonia es vida!</div>
+      </div>
+      <div class="slide">
+        <img src="Nueva carpeta/slider2.png" alt="Promo 2">
+        <div class="caption">Cuidemos nuestro pulmón verde</div>
+      </div>
+      <div class="slide">
+        <img src="Nueva carpeta/slider3.png" alt="Promo 3">
+        <div class="caption">¡Biodiversidad en cada hoja!</div>
+      </div>
+    </div>
+    <span class="arrow prev" onClick="previousSlide('slider-inicio')">&#10094;</span>
+    <span class="arrow next" onClick="nextSlide('slider-inicio')">&#10095;</span>
+  </div>
+</div>
+
+<!-- JavaScript for Toggle Info -->
+<script>
+  // Mostrar y ocultar información
+  function showInfo(infoId) {
+    const infoDiv = document.getElementById(infoId);
+    if (infoDiv.style.display === "none" || infoDiv.style.display === "") {
+      infoDiv.style.display = "block";
+    } else {
+      infoDiv.style.display = "none";
+    }
+  }
+
+  // Reiniciar las imágenes (ponerlas en su estado original)
+  function resetImageBoxes() {
+    const imageBoxes = document.querySelectorAll('.image-box');
+    imageBoxes.forEach(box => {
+      const image = box.querySelector('.info-image');
+      const info = box.querySelector('.info-content');
+
+      // Reiniciar el estado de las imágenes y los contenidos
+      image.style.transform = 'scale(1)';
+      info.style.display = 'none';
+    });
+  }
+
+  // Función para cambiar de sección y reiniciar las imágenes
+  function switchSection(sectionId) {
+    // Reiniciar las imágenes antes de cambiar de sección
+    resetImageBoxes();
+    
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' }); // Hacer scroll hacia la sección seleccionada
+    }
+  }
+
+  // Si cambias de submenú, reinicia las imágenes
+  window.addEventListener('popstate', function() {
+    resetImageBoxes(); // Reinicia las imágenes cuando cambias de página o submenú
+  });
+
+  // Reinicia las imágenes cuando se recarga la página
+  window.addEventListener('load', function() {
+    resetImageBoxes(); // Reinicia las imágenes al cargar la página por primera vez
+  });
+</script>
+
+<!-- CSS -->
+<style>
+  /* Espaciado entre los cajones */
+  .image-box {
+    display: inline-block;
+    margin: 30px; /* Esto da más espacio entre los cajones */
+    text-align: center;
+    position: relative;
+    background-color: #fff; /* Fondo blanco para el "cajón" */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+    overflow: hidden; /* Para que no se desborden */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    border: 3px solid #00aaff; /* Borde de color */
+  }
+
+  /* Efecto al pasar el cursor sobre la imagen */
+  .image-box:hover {
+    transform: scale(1.05); /* Agranda la caja ligeramente */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+  }
+
+  /* Estilo de la imagen */
+  .info-image {
+    width: 100%; /* Aseguramos que la imagen ocupe todo el ancho de su contenedor */
+    height: auto; /* Mantener la proporción original */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.3s ease; /* Transición suave al hacer hover */
+  }
+
+  /* Efecto al pasar el cursor sobre la imagen */
+  .info-image:hover {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen */
+  }
+
+  /* Estilo para los contenidos informativos (cuando se hace clic en la imagen) */
+  .info-content {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para los textos */
+  }
+
+  /* Separación y ajuste de tamaño para el slider */
+  .slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 50px; /* Aquí separo el slider de los cajones con más espacio */
+    margin-bottom: 50px; /* Aumento la separación con un margen inferior */
+    overflow: hidden;
+  }
+
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+  .slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 90px auto 0; /* Aquí se agrega un margen superior de 30px */
+  overflow: hidden;
+}
+
+</style>
+
+
+
+<div class="info-section" id="menu">
+  <center><h2><font style="font-family:Bernard MT Condensed" >Lenguas de la Amazonia Ecuatoriana</font></h2>
+  <p></p>
+    <p>Las lenguas de la Amazonía ecuatoriana son un conjunto diverso de idiomas hablados por las comunidades indígenas que habitan la región amazónica de Ecuador. Estos idiomas pertenecen a varias familias lingüísticas, algunas de las cuales están relacionadas entre sí, mientras que otras son lenguas aisladas, sin conexión conocida con otros idiomas del mundo.</p>
+  </center>
+  
+  <p>La región amazónica de Ecuador es hogar de una rica diversidad lingüística, donde las lenguas no solo son herramientas de comunicación, sino que también son fundamentales para la identidad cultural, los conocimientos tradicionales, la cosmovisión y la relación de los pueblos indígenas con su entorno natural.</p>
+
+  <center><h2><font style="font-family:Bernard MT Condensed" >Diversidad Lingüística</font></h2>
+    <p>En la Amazonía ecuatoriana se hablan alrededor de 12 lenguas indígenas principales, que incluyen lenguas como el Kichwa (Quichua), Shuar, Achuar, Waorani, Tsáchila, y otras lenguas menos habladas como el Záparo o el Cofán. Estas lenguas no solo están distribuidas entre diferentes pueblos y nacionalidades, sino que también tienen variaciones dialectales significativas, dependiendo de las comunidades que las hablan.</p>
+  </center>
+
+  <center><h2><h2><font style="font-family:Bernard MT Condensed" >Lenguas en Extincion de la Amazonia Ecuatoriana</font></h2>
+
+  <!-- Sección Horizontal de Imágenes y Contenido -->
+  <div class="image-box-container">
+    <!-- Imagen 1: Zaparo -->
+    <div class="image-box">
+      <img src="Nueva carpeta/cajon4.png" alt="Imagen Zaparo" class="info-image" onClick="showInfo('info-zaparo', this)">
+      <div class="info-content" id="info-zaparo">
+        <h2>ZAPARA</h2>
+        <p>El zápara es una lengua aislada que no pertenece a ninguna familia lingüística conocida, lo que significa que su origen no está relacionado con otros idiomas. Es hablado por el pueblo Záparo en las provincias de Sucumbíos y Orellana, ubicadas en Ecuador, aunque algunas comunidades también se encuentran en la región amazónica del Perú. Esta lengua ha estado en peligro de extinción, con pocos hablantes nativos.</p>
+      </div>
+    </div>
+
+    <!-- Imagen 2: Tagaeri -->
+    <div class="image-box">
+      <img src="Nueva carpeta/cajon5.png" alt="Imagen Tagaeri" class="info-image" onClick="showInfo('info-tagaeri', this)">
+      <div class="info-content" id="info-tagaeri">
+        <h2>TAGAERI</h2>
+        <p>El tagaeri es una lengua aislada que no pertenece a ninguna familia lingüística conocida, lo que significa que su origen no está relacionado con otros idiomas. Es hablado por el pueblo tagaeri, una comunidad indígena ubicada en la región amazónica de Ecuador, en las provincias de Sucumbíos y Orellana. Esta lengua también enfrenta un alto riesgo de desaparición debido a la escasez de hablantes.</p>
+      </div>
+    </div>
+
+    <!-- Imagen 3: Taromenane -->
+    <div class="image-box">
+      <img src="Nueva carpeta/cajon6.png" alt="Imagen Taromenane" class="info-image" onClick="showInfo('info-taromenane', this)">
+      <div class="info-content" id="info-taromenane">
+        <h2>TAROMENANE</h2>
+        <p>El taromenane es una lengua aislada que no pertenece a ninguna familia lingüística conocida, lo que significa que su origen no está relacionado con otros idiomas. Es hablado por el pueblo taromenane, una comunidad que habita en la región selvática de Ecuador, particularmente en las provincias de Sucumbíos y Orellana. Al igual que el tagaeri y el zápara, el taromenane está en grave peligro de extinción debido a la reducción de su número de hablantes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider for Menu -->
+  <div class="slider-container" id="slider-menu">
+    <div class="slider">
+      <div class="slide">
+        <img src="Nueva carpeta/skider4.png" alt="Promo 1">
+        <div class="caption">¡La Amazonia es un milagro de la naturaleza!</div>
+      </div>
+      <div class="slide">
+        <img src="Nueva carpeta/slider5.png" alt="Promo 2">
+        <div class="caption">La selva es un canto a la Esperanza</div> 
+      </div>
+      <div class="slide">
+        <img src="Nueva carpeta/slider6.png" alt="Promo 3">
+        <div class="caption">¡La selva es un poema de la tierra!</div>
+      </div>
+    </div>
+    <span class="arrow prev" onClick="previousSlide('slider-menu')">&#10094;</span>
+    <span class="arrow next" onClick="nextSlide('slider-menu')">&#10095;</span>
+  </div>
+</div>
+
+<script>
+  // Mostrar la información de las imágenes
+  function showInfo(infoId, imageElement) {
+    const infoDiv = document.getElementById(infoId);
+
+    // Si la información no está visible, mostrarla
+    if (infoDiv.style.display !== "block") {
+      infoDiv.style.display = "block";
+      imageElement.style.transform = "scale(1.1)";  // Agrandar la imagen cuando la info se muestra
+    } else {
+      infoDiv.style.display = "none";
+      imageElement.style.transform = "scale(1)";  // Restaurar el tamaño de la imagen
+    }
+  }
+
+  // Función para ocultar toda la información
+  function resetImageBoxes() {
+    const infoContents = document.querySelectorAll('.info-content');
+    // Ocultar toda la información al cambiar de sección
+    infoContents.forEach(content => {
+      content.style.display = "none";
+    });
+  }
+
+  // Función para cambiar de sección y reiniciar el estado de las imágenes
+  function switchSection(sectionId) {
+    resetImageBoxes();  // Reiniciar las imágenes e información al cambiar de sección
+
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });  // Desplazar la página a la sección
+    }
+  }
+
+  // Si el usuario cambia de submenú, reiniciar las imágenes
+  window.addEventListener('popstate', function() {
+    resetImageBoxes();  // Reinicia las imágenes al cambiar de página
+  });
+
+  // Cuando la página se recarga, reiniciar las imágenes
+  window.addEventListener('load', function() {
+    resetImageBoxes();  // Reiniciar las imágenes al cargar la página
+  });
+</script>
+
+<style>
+  /* Contenedor horizontal de imágenes */
+  .image-box-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+
+  /* Caja de imagen individual */
+  .image-box {
+    text-align: center;
+    margin: 10px;
+  }
+
+  /* Estilo para las imágenes */
+  .info-image {
+    width: 200px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  /* Efecto al pasar el ratón por encima de la imagen */
+  .info-image:hover {
+    transform: scale(1.1);
+  }
+
+  /* Contenedor de la información */
+  .info-container {
+    display: flex;
+    flex-wrap: nowrap;  /* Para que se muestre todo horizontalmente */
+    margin-top: 20px;
+    overflow-x: auto;  /* Habilitar desplazamiento horizontal */
+  }
+
+  .info-content {
+    min-width: 300px;
+    margin-right: 20px;
+    font-size: 14px;
+    color: #333;
+    display: none; /* Ocultamos la información por defecto */
+  }
+
+  /* Estilos para el slider */
+  .slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+  .slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 90px auto 0; /* Aquí se agrega un margen superior de 30px */
+  overflow: hidden;
+}
+
+</style>
+
+
+ <div class="info-section" id="ofertas">
+  <center><h2><font style="font-family:Bernard MT Condensed" >Conservación de los Animales de la Amazonia Ecuatoriana</font></h2></center>
+  <p></p>
+    <p>La conservación de los animales en la Amazonía ecuatoriana es esencial para preservar la increíble biodiversidad de esta región, que alberga una de las selvas tropicales más ricas y diversas del planeta. La Amazonía ecuatoriana es hogar de una amplia variedad de especies endémicas y únicas que desempeñan un papel vital en el equilibrio ecológico global. Sin embargo, enfrenta múltiples amenazas que ponen en peligro a muchas de sus especies animales, como la deforestación causada por la expansión de la agricultura, la minería ilegal, la caza furtiva y la contaminación de los ríos y suelos. Estas actividades no solo afectan a las especies animales, sino también a las comunidades locales, que dependen de estos ecosistemas para su sustento y cultura.</p>
+	  <p>El objetivo de la conservación en la Amazonía ecuatoriana no es solo proteger a los animales, sino también asegurar la integridad de los ecosistemas, que son fundamentales para la regulación del clima global y el ciclo del agua. Los bosques amazónicos actúan como sumideros de carbono, ayudando a mitigar los efectos del cambio climático. Además, las especies animales juegan un papel clave en la dispersión de semillas, el control de plagas y el mantenimiento de la salud del medio ambiente. La pérdida de biodiversidad en esta región podría tener consecuencias irreparables, afectando tanto a la fauna como a los humanos que dependen de estos recursos.</p>
+	   <h2>Tres animales que debemos conservar</h2>
+  </center>
+  
+  <!-- Sección Horizontal de Imágenes y Contenido -->
+  <div class="image-box-container">
+    <!-- Imagen 1: Oferta 1 -->
+    <div class="image-box">
+      <img src="Nueva carpeta/cajon7.png" alt="Imagen Oferta 1" class="info-image" onClick="showInfo('info-oferta1', this)">
+      <div class="info-content" id="info-oferta1">
+        <h2>Jaguar (Panthera onca)</h2>
+        <p>El jaguar es uno de los animales más emblemáticos de la Amazonía y uno de los depredadores más importantes en los ecosistemas de la región. Como apex predator, controla las poblaciones de otras especies y mantiene el equilibrio ecológico. Este felino ha sido gravemente afectado por la caza furtiva y la destrucción de su hábitat debido a la expansión de la frontera agrícola y la urbanización. La caza ilegal y la pérdida de su hábitat han reducido su población, convirtiéndolo en una especie vulnerable. Proteger al jaguar no solo es crucial para la fauna amazónica, sino también para la salud de todo el ecosistema.</p>
+      </div>
+    </div>
+
+    <!-- Imagen 2: Oferta 2 -->
+    <div class="image-box">
+      <img src="Nueva carpeta/cajon8.png" alt="Imagen Oferta 2" class="info-image" onClick="showInfo('info-oferta2', this)">
+      <div class="info-content" id="info-oferta2">
+        <h2>Delfín rosado (Inia geoffrensis)</h2>
+        <p>Este delfín de agua dulce es uno de los animales más distintivos de los ríos amazónicos. Es conocido por su color rosado y su inteligencia. Sin embargo, el delfín rosado enfrenta graves amenazas, como la contaminación del agua, los derrames de petróleo, la pesca incidental y la pérdida de hábitat debido a la construcción de represas y la alteración de los cauces fluviales. A pesar de ser una especie protegida, su población sigue en declive, y su conservación es crucial para la salud de los ecosistemas acuáticos amazónicos, que son esenciales para la vida de muchas otras especies.</p>
+      </div>
+    </div>
+
+    <!-- Imagen 3: Oferta 3 -->
+    <div class="image-box">
+      <img src="Nueva carpeta/cajon9.png" alt="Imagen Oferta 3" class="info-image" onClick="showInfo('info-oferta3', this)">
+      <div class="info-content" id="info-oferta3">
+        <h2>Tapir andino (Tapirus pinchaque)</h2>
+        <p>El tapir andino es una especie emblemática de los bosques tropicales de montaña en la Amazonía. Este mamífero herbívoro es fundamental para la regeneración del bosque, ya que dispersa semillas y ayuda a mantener la biodiversidad de la vegetación. Sin embargo, el tapir andino está en peligro debido a la caza ilegal y la pérdida de su hábitat por la expansión de la agricultura y la ganadería. Su declive tendría un impacto negativo en la regeneración natural de los bosques y en la supervivencia de otras especies dependientes de estos ecosistemas. La conservación de esta especie es esencial para el mantenimiento de los servicios ecosistémicos en la región.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider for Ofertas -->
+  <div class="slider-container" id="slider-ofertas">
+    <div class="slider">
+      <div class="slide">
+        <img src="Nueva carpeta/slider7.png" alt="Promo 1">
+        <div class="caption">¡El futuro es verde!</div>
+      </div>
+      <div class="slide">
+        <img src="Nueva carpeta/slider8.png" alt="Promo 2">
+        <div class="caption">Cada especie cuenta</div>
+      </div>
+      <div class="slide">
+        <img src="Nueva carpeta/slider9.png" alt="Promo 3">
+        <div class="caption">¡La vida florece en la Amazonia!</div>
+      </div>
+    </div>
+    <span class="arrow prev" onClick="previousSlide('slider-ofertas')">&#10094;</span>
+    <span class="arrow next" onClick="nextSlide('slider-ofertas')">&#10095;</span>
+  </div>
+</div>
+
+<script>
+  // Mostrar la información de las imágenes
+  function showInfo(infoId, imageElement) {
+    const infoDiv = document.getElementById(infoId);
+
+    // Si la información no está visible, mostrarla
+    if (infoDiv.style.display !== "block") {
+      infoDiv.style.display = "block";
+      imageElement.style.transform = "scale(1.1)";  // Agrandar la imagen cuando la info se muestra
+    } else {
+      infoDiv.style.display = "none";
+      imageElement.style.transform = "scale(1)";  // Restaurar el tamaño de la imagen
+    }
+  }
+
+  // Función para ocultar toda la información
+  function resetImageBoxes() {
+    const infoContents = document.querySelectorAll('.info-content');
+    // Ocultar toda la información al cambiar de sección
+    infoContents.forEach(content => {
+      content.style.display = "none";
+    });
+  }
+
+  // Función para cambiar de sección y reiniciar el estado de las imágenes
+  function switchSection(sectionId) {
+    resetImageBoxes();  // Reiniciar las imágenes e información al cambiar de sección
+
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });  // Desplazar la página a la sección
+    }
+  }
+
+  // Si el usuario cambia de submenú, reiniciar las imágenes
+  window.addEventListener('popstate', function() {
+    resetImageBoxes();  // Reinicia las imágenes al cambiar de página
+  });
+
+  // Cuando la página se recarga, reiniciar las imágenes
+  window.addEventListener('load', function() {
+    resetImageBoxes();  // Reiniciar las imágenes al cargar la página
+  });
+</script>
+
+<style>
+  /* Contenedor horizontal de imágenes */
+  .image-box-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+
+  /* Caja de imagen individual */
+  .image-box {
+    text-align: center;
+    margin: 10px;
+  }
+
+  /* Estilo para las imágenes */
+  .info-image {
+    width: 200px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  /* Efecto al pasar el ratón por encima de la imagen */
+  .info-image:hover {
+    transform: scale(1.1);
+  }
+
+  /* Contenedor de la información */
+  .info-container {
+    display: flex;
+    flex-wrap: nowrap;  /* Para que se muestre todo horizontalmente */
+    margin-top: 20px;
+    overflow-x: auto;  /* Habilitar desplazamiento horizontal */
+  }
+
+  .info-content {
+    min-width: 300px;
+    margin-right: 20px;
+    font-size: 14px;
+    color: #333;
+    display: none; /* Ocultamos la información por defecto */
+  }
+
+  /* Estilos para el slider */
+  .slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto 0; /* Agregado el margen superior para separar el slider de otros elementos */
+    overflow: hidden;
+  }
+
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+  .slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 90px auto 0; /* Aquí se agrega un margen superior de 30px */
+  overflow: hidden;
+}
+
+</style>
+
+
+  <div class="info-section" id="ubicaciones">
+  <center><h2><font style="font-family:Bernard MT Condensed" >Deforestación </font></h2>
+  <p></p>
+    <p>La Amazonía ecuatoriana es uno de los ecosistemas más ricos en biodiversidad del planeta, pero enfrenta graves amenazas debido a la deforestación y la actividad humana. La tala de árboles, la minería ilegal y la expansión de la frontera agrícola han acelerado la pérdida de bosques en esta región, lo que pone en riesgo tanto el equilibrio ecológico como las comunidades indígenas que dependen de estos recursos naturales.</p>
+	
+	    <p>Las principales causas de la deforestación en la Amazonía ecuatoriana incluyen la extracción de recursos naturales, como el petróleo y los minerales, y la expansión de la agricultura, especialmente para cultivos como la palma aceitera y la soja. Estos procesos destruyen vastas áreas de selva, alteran los hábitats y contribuyen al cambio climático al liberar grandes cantidades de carbono a la atmósfera.</p>
+		
+		    <p>La conservación de la Amazonía ecuatoriana es esencial para proteger su biodiversidad única y mitigar los efectos del cambio climático. Iniciativas como la creación de reservas naturales, el fortalecimiento de los derechos de las comunidades indígenas y el fomento de prácticas agrícolas sostenibles son pasos importantes para frenar la deforestación y restaurar áreas degradadas.</p>
+			
+			    <p>Es urgente que tanto el gobierno como la sociedad civil trabajen juntos para proteger la Amazonía ecuatoriana. La implementación de políticas más estrictas, la educación ambiental y el apoyo a proyectos de conservación son claves para asegurar que esta invaluable región siga siendo un pulmón verde para el mundo.</p>
+  </center>
+
+  <!-- Sección Horizontal de Imágenes y Contenido -->
+  <div class="image-box-container">
+    <!-- Imagen 1: Ubicación 1 -->
+    <div class="image-box">
+      <img src="Nueva carpeta/cajon10.png" alt="Imagen Ubicación 1" class="info-image" onClick="showInfo('info-ubicacion1', this)">
+      <div class="info-content" id="info-ubicacion1">
+        <h2>Selva Amazónica Ecutoriana</h2>
+        <p> Representa la exuberante biodiversidad y el equilibrio natural de la Amazonía ecuatoriana. Este ecosistema alberga una impresionante variedad de flora y fauna, siendo fundamental para la estabilidad climática global. Los árboles, plantas y ríos de la región actúan como reguladores del ciclo del agua y almacenan carbono, desempeñando un rol crucial en la lucha contra el cambio climático. Su conservación es esencial para mantener estos servicios ambientales vitales.</p>
+      </div>
+    </div>
+
+    <!-- Imagen 2: Ubicación 2 -->
+    <div class="image-box">
+      <img src="Nueva carpeta/cajon11.png" alt="Imagen Ubicación 2" class="info-image" onClick="showInfo('info-ubicacion2', this)">
+      <div class="info-content" id="info-ubicacion2">
+        <h2>Comunidades Indígenas en la Amazonía</h2>
+        <p>Las comunidades indígenas en la Amazonía ecuatoriana son guardianes del bosque, con un conocimiento ancestral que les permite vivir de manera sostenible. Estas comunidades tienen un profundo vínculo espiritual y cultural con el territorio, utilizando los recursos naturales de manera responsable. Su forma de vida ha sido fundamental para la conservación de la biodiversidad, y su participación en la protección del medio ambiente es clave para las soluciones a largo plazo frente a la deforestación.</p>
+      </div>
+    </div>
+
+    <!-- Imagen 3: Ubicación 3 -->
+    <div class="image-box">
+      <img src="Nueva carpeta/cajon12.png" alt="Imagen Ubicación 3" class="info-image" onClick="showInfo('info-ubicacion3', this)">
+      <div class="info-content" id="info-ubicacion3">
+        <h2> Minería o Tala Ilegal en la Amazonía</h2>
+        <p> La minería ilegal y la tala de árboles son dos de las principales amenazas a la Amazonía ecuatoriana. La extracción de recursos sin regulaciones adecuadas destruye vastas áreas de selva, alterando ecosistemas enteros y poniendo en peligro especies animales y vegetales. Además, estas actividades liberan grandes cantidades de CO2 en la atmósfera, lo que contribuye al cambio climático. Esta imagen destaca la necesidad urgente de frenar estas prácticas destructivas para evitar un daño irreparable a la región.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider for Ubicaciones -->
+  <div class="slider-container" id="slider-ubicaciones">
+    <div class="slider">
+      <div class="slide">
+        <img src="Nueva carpeta/slider10.png" alt="Promo 1">
+        <div class="caption">¡La selva habla, escuchemos!</div>
+      </div>
+      <div class="slide">
+        <img src="Nueva carpeta/slider11.png" alt="Promo 2">
+        <div class="caption">Salvar la Amazonia es salvarnos</div>
+      </div>
+      <div class="slide">
+        <img src="Nueva carpeta/slider12.png" alt="Promo 3">
+        <div class="caption">¡Protegamos la naturaleza!</div>
+      </div>
+    </div>
+    <span class="arrow prev" onClick="previousSlide('slider-ubicaciones')">&#10094;</span>
+    <span class="arrow next" onClick="nextSlide('slider-ubicaciones')">&#10095;</span>
+  </div>
+</div>
+
+<script>
+  // Mostrar la información de las imágenes
+  function showInfo(infoId, imageElement) {
+    const infoDiv = document.getElementById(infoId);
+
+    // Si la información no está visible, mostrarla
+    if (infoDiv.style.display !== "block") {
+      infoDiv.style.display = "block";
+      imageElement.style.transform = "scale(1.1)";  // Agrandar la imagen cuando la info se muestra
+    } else {
+      infoDiv.style.display = "none";
+      imageElement.style.transform = "scale(1)";  // Restaurar el tamaño de la imagen
+    }
+  }
+
+  // Función para ocultar toda la información
+  function resetImageBoxes() {
+    const infoContents = document.querySelectorAll('.info-content');
+    // Ocultar toda la información al cambiar de sección
+    infoContents.forEach(content => {
+      content.style.display = "none";
+    });
+  }
+
+  // Función para cambiar de sección y reiniciar el estado de las imágenes
+  function switchSection(sectionId) {
+    resetImageBoxes();  // Reiniciar las imágenes e información al cambiar de sección
+
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });  // Desplazar la página a la sección
+    }
+  }
+
+  // Si el usuario cambia de submenú, reiniciar las imágenes
+  window.addEventListener('popstate', function() {
+    resetImageBoxes();  // Reinicia las imágenes al cambiar de página
+  });
+
+  // Cuando la página se recarga, reiniciar las imágenes
+  window.addEventListener('load', function() {
+    resetImageBoxes();  // Reiniciar las imágenes al cargar la página
+  });
+</script>
+
+<style>
+  /* Contenedor horizontal de imágenes */
+  .image-box-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+
+  /* Caja de imagen individual */
+  .image-box {
+    text-align: center;
+    margin: 10px;
+  }
+
+  /* Estilo para las imágenes */
+  .info-image {
+    width: 200px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  /* Efecto al pasar el ratón por encima de la imagen */
+  .info-image:hover {
+    transform: scale(1.1);
+  }
+
+  /* Contenedor de la información */
+  .info-container {
+    display: flex;
+    flex-wrap: nowrap;  /* Para que se muestre todo horizontalmente */
+    margin-top: 20px;
+    overflow-x: auto;  /* Habilitar desplazamiento horizontal */
+  }
+
+  .info-content {
+    min-width: 300px;
+    margin-right: 20px;
+    font-size: 14px;
+    color: #333;
+    display: none; /* Ocultamos la información por defecto */
+  }
+
+  /* Estilos para el slider */
+  .slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto 0; /* Agregado el margen superior para separar el slider de otros elementos */
+    overflow: hidden;
+  }
+
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+  .slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 90px auto 0; /* Aquí se agrega un margen superior de 30px */
+  overflow: hidden;
+}
+
+</style>
+
+<div class="info-section" id="contacto">
+  <center><h2><font style="font-family:Bernard MT Condensed" >Un Esfuerzo por Restaurar el "Pulmón de América" </font></h2></center>
+
+   <p></p>
+  
+    <p>La minería ilegal en la Amazonía ecuatoriana es una de las principales amenazas para el ecosistema y las comunidades locales. Esta actividad, que se lleva a cabo sin regulaciones ni controles, destruye grandes extensiones de bosque y contamina los ríos con mercurio y otros metales pesados. La falta de medidas de control y la creciente demanda de recursos naturales por parte de mercados internacionales intensifican el impacto negativo, acelerando la deforestación y poniendo en peligro la biodiversidad de la región.</p>
+	
+	  <p>Los efectos de la minería ilegal van más allá de la destrucción de los bosques. Los ríos amazónicos, esenciales para la vida de las comunidades locales y para la fauna de la región, están siendo severamente contaminados con mercurio. Este metal pesado no solo afecta la fauna acuática, sino que también llega a las fuentes de agua que utilizan las comunidades indígenas y campesinas. La contaminación del agua pone en riesgo la salud de los habitantes y limita sus recursos para la pesca y el consumo.</p>
+	    <p>Además, la minería ilegal afecta profundamente a las comunidades indígenas que habitan en la Amazonía. Muchas de estas comunidades dependen de los recursos naturales para su sustento y tienen una relación ancestral con la tierra. La minería ilegal, al invadir sus territorios, destruye sus fuentes de sustento, y genera conflictos por la posesión de tierras. A pesar de los esfuerzos por parte del gobierno y diversas organizaciones ambientales, la falta de un control efectivo permite que esta actividad continúe expandiéndose, desplazando a las comunidades y vulnerando sus derechos.</p>
+		  <p>El desafío es enorme, pero existen iniciativas que buscan mitigar los efectos de la minería ilegal en la Amazonía ecuatoriana. La implementación de políticas más estrictas, la promoción de alternativas económicas sostenibles para las comunidades y el fortalecimiento de la vigilancia ambiental son pasos esenciales para proteger la región. Sin embargo, la cooperación entre gobiernos, organizaciones internacionales y comunidades locales es crucial para abordar de manera efectiva la minería ilegal y sus impactos.</p>
+		    
+  </center>
+
+  <!-- Sección Horizontal de Imágenes y Contenido -->
+  <div class="image-box-container">
+    <!-- Imagen 1: Contacto 1 -->
+    <div class="image-box">
+      <img src="Nueva carpeta/cajon15.png" alt="Imagen Contacto 1" class="info-image" onClick="showInfo('info-contacto1', this)">
+      <div class="info-content" id="info-contacto1">
+        <h2>Reforestación en áreas deforestadas</h2>
+        <p>La reforestación es el proceso de volver a plantar árboles en áreas donde se ha producido deforestación. Este esfuerzo busca restaurar los ecosistemas perdidos, mejorar la calidad del aire, recuperar la biodiversidad y mitigar el cambio climático al absorber dióxido de carbono de la atmósfera.</p>
+      </div>
+    </div>
+
+    <!-- Imagen 2: Contacto 2 -->
+    <div class="image-box">
+      <img src="Nueva carpeta/cajon13.png" alt="Imagen Contacto 2" class="info-image" onClick="showInfo('info-contacto2', this)">
+      <div class="info-content" id="info-contacto2">
+        <h2>Participación de comunidades indígenas en conservación</h2>
+        <p>Las comunidades indígenas tienen un vínculo profundo con la tierra y los recursos naturales. Su participación en la conservación implica el uso de sus conocimientos ancestrales para proteger los bosques, gestionar los recursos de manera sostenible y garantizar que sus tierras sean preservadas para las generaciones futuras.</p>
+      </div>
+    </div>
+
+    <!-- Imagen 3: Contacto 3 -->
+    <div class="image-box">
+      <img src="Nueva carpeta/cajon14.png" alt="Imagen Contacto 3" class="info-image" onClick="showInfo('info-contacto3', this)">
+      <div class="info-content" id="info-contacto3">
+        <h2>Promoción de la conservación del medio ambiente</h2>
+        <p>Este concepto implica la sensibilización pública y la creación de políticas para proteger el medio ambiente. Incluye esfuerzos para educar a las personas sobre la importancia de conservar los ecosistemas, fomentar prácticas sostenibles y apoyar leyes que protejan los recursos naturales de la explotación desmedida.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider for Contacto -->
+  <div class="slider-container" id="slider-contacto">
+    <div class="slider">
+      <div class="slide">
+        <img src="Nueva carpeta/slider13.png" alt="Promo 1">
+        <div class="caption">¡Amazonía: Corazón de la tierra!</div>
+      </div>
+      <div class="slide">
+        <img src="Nueva carpeta/slider14.png" alt="Promo 2">
+        <div class="caption">La selva es un lugar sagrado</div>
+      </div>
+      <div class="slide">
+        <img src="Nueva carpeta/slider15.png" alt="Promo 3">
+        <div class="caption">¡La selva es refugio de vida!</div>
+      </div>
+    </div>
+    <span class="arrow prev" onClick="previousSlide('slider-contacto')">&#10094;</span>
+    <span class="arrow next" onClick="nextSlide('slider-contacto')">&#10095;</span>
+  </div>
+</div>
+
+<script>
+  // Mostrar la información de las imágenes
+  function showInfo(infoId, imageElement) {
+    const infoDiv = document.getElementById(infoId);
+
+    // Si la información no está visible, mostrarla
+    if (infoDiv.style.display !== "block") {
+      infoDiv.style.display = "block";
+      imageElement.style.transform = "scale(1.1)";  // Agrandar la imagen cuando la info se muestra
+    } else {
+      infoDiv.style.display = "none";
+      imageElement.style.transform = "scale(1)";  // Restaurar el tamaño de la imagen
+    }
+  }
+
+  // Función para ocultar toda la información
+  function resetImageBoxes() {
+    const infoContents = document.querySelectorAll('.info-content');
+    // Ocultar toda la información al cambiar de sección
+    infoContents.forEach(content => {
+      content.style.display = "none";
+    });
+  }
+
+  // Función para cambiar de sección y reiniciar el estado de las imágenes
+  function switchSection(sectionId) {
+    resetImageBoxes();  // Reiniciar las imágenes e información al cambiar de sección
+
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });  // Desplazar la página a la sección
+    }
+  }
+
+  // Si el usuario cambia de submenú, reiniciar las imágenes
+  window.addEventListener('popstate', function() {
+    resetImageBoxes();  // Reinicia las imágenes al cambiar de página
+  });
+
+  // Cuando la página se recarga, reiniciar las imágenes
+  window.addEventListener('load', function() {
+    resetImageBoxes();  // Reiniciar las imágenes al cargar la página
+  });
+</script>
+
+<style>
+  /* Contenedor horizontal de imágenes */
+  .image-box-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+
+  /* Caja de imagen individual */
+  .image-box {
+    text-align: center;
+    margin: 10px;
+  }
+
+  /* Estilo para las imágenes */
+  .info-image {
+    width: 200px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  /* Efecto al pasar el ratón por encima de la imagen */
+  .info-image:hover {
+    transform: scale(1.1);
+  }
+
+  /* Contenedor de la información */
+  .info-container {
+    display: flex;
+    flex-wrap: nowrap;  /* Para que se muestre todo horizontalmente */
+    margin-top: 20px;
+    overflow-x: auto;  /* Habilitar desplazamiento horizontal */
+  }
+
+  .info-content {
+    min-width: 300px;
+    margin-right: 20px;
+    font-size: 14px;
+    color: #333;
+    display: none; /* Ocultamos la información por defecto */
+  }
+
+  /* Estilos para el slider */
+  .slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto 0; /* Agregado el margen superior para separar el slider de otros elementos */
+    overflow: hidden;
+  }
+
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+  .slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 90px auto 0; /* Aquí se agrega un margen superior de 30px */
+  overflow: hidden;
+}
+
+</style>
+  <!-- Footer -->
+ <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        footer .social-icons {
+            margin: 10px 0;
+        }
+        footer .social-icons a {
+            color: red;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+        footer .social-icons a:hover {
+            color: #ff9800;
+        }
+    </style>
+<footer>
+    <div class="footer-content">
+        <h3>SELVA VIVA 🐯</h3>
+        <p>Unidos por el medio ambiente .</p>
+        <ul class="socials">
+            <li><a href="https://www.facebook.com/profile.php?id=61572628688152" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://www.instagram.com/selva.viva_56?utm_source=qr&igsh=MTlwa2JtaTlpbGpvdg=="><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://youtube.com/@selvaviva-amozonica?si=BNsfUHXoWKrn23bf"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="https://whatsapp.com/channel/0029Vb4LzySHQbS8RF1EdA25"><i class="fab fa-whatsapp"></i></a></li>
+			<li><a href="https://maps.app.goo.gl/kRavSzpqWcLxWkZ97"><i class="fab fa-google"></i></a></li>
+            <li><a href="https://www.snapchat.com/add/selva_amazonica?share_id=I-bW30RhNx4&locale=es-ES"><i class="fab fa-snapchat-ghost"></i></a></li>
+            <li><a href=" https://x.com/selva_viva08?t=U_hQLSDKTVIO-O2Av_2FxQ&s=08"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.tiktok.com/@unidos.por.un.med?_t=ZM-8uh4fWfxYZC&_r=1"><i class="fab fa-tiktok"></i></a></li>
+
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 SELVA VIVA  Todos los derechos reservados. </p>
+		<img src="Nueva carpeta/FONDODELFINAL.PNG" alt="Emoji">
+
+		
+    </div>
+</footer>
+
+  <script>
+    // Slider functionality for different sliders (same as your code)
+    function showSlide(index, sliderId) {
+      const slides = document.querySelectorAll(`#${sliderId} .slide`);
+      const totalSlides = slides.length;
+
+      if (index >= totalSlides) {
+        index = 0;
+      } else if (index < 0) {
+        index = totalSlides - 1;
+      }
+
+      for (let i = 0; i < totalSlides; i++) {
+        slides[i].style.display = 'none';
+      }
+
+      slides[index].style.display = 'block';
+    }
+
+    function nextSlide(sliderId) {
+      const slider = document.querySelector(`#${sliderId} .slider`);
+      let slideIndex = Array.from(slider.children).findIndex(slide => slide.style.display === 'block');
+      showSlide(slideIndex + 1, sliderId);
+    }
+
+    function previousSlide(sliderId) {
+      const slider = document.querySelector(`#${sliderId} .slider`);
+      let slideIndex = Array.from(slider.children).findIndex(slide => slide.style.display === 'block');
+      showSlide(slideIndex - 1, sliderId);
+    }
+
+    function showPage(pageId) {
+      const sections = document.querySelectorAll('.info-section');
+      sections.forEach(section => section.style.display = 'none');
+      
+      const selectedSection = document.getElementById(pageId);
+      selectedSection.style.display = 'block';
+
+      // Show the corresponding slider
+      const sliderId = `slider-${pageId}`;
+      showSlide(0, sliderId); // Show the first slide of the selected slider
+    }
+
+    // Initialize: show the "inicio" section by default
+    showPage('inicio');
+
+    // Start menu functionality
+    function startMenuClick() {
+      const startMenu = document.getElementById('start-menu');
+      startMenu.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
